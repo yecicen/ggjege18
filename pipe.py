@@ -31,3 +31,15 @@ class Pipe:
         rect.x += self.level.x
         rect.y += self.level.y
         return rect
+
+    def setPipeType(self, type):
+        if type == 1:
+            self.image = pygame.image.load('images/top_bottom.png')
+        elif type == 2:
+            self.image = pygame.image.load('images/left_corner.png')
+        elif type == 3:
+            self.image = pygame.image.load('images/bottom_up.png')
+        elif type == 4:
+            self.image = pygame.image.load('images/four_Way.png')
+        else:
+            print("Pipe Type Error, please use range (1,4)")
