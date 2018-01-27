@@ -13,6 +13,9 @@ def run():
 
     crashed = False
     while not crashed:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                crashed = True
         gameDisplay.fill(white)
         level.render(gameDisplay)
         pygame.display.flip()
