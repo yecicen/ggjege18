@@ -1,14 +1,22 @@
-from dash import Dash
+from pipe import Pipe
+
+
 class Level:
-    def __init__(self):
-        self.dashList = []
+    def __init__(self, x, y):
+        self.pipeList = []
+        self.x = x
+        self.y = y
 
     def generate(self, width, height):
         for x in range(width):
             for y in range(height):
-                dash = Dash(x,y)
-                self.dashList.append(dash)
+                pipe = Pipe(self, x, y)
+                self.pipeList.append(pipe)
 
     def render(self, display):
-        for dash in self.dashList:
-            dash.render(display)
+        for pipe in self.pipeList:
+            pipe.render(display)
+
+    def click(self, pos):
+        for pipe in self.pipeList:
+            pipe.click(pos)
