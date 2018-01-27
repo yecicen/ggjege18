@@ -6,7 +6,14 @@ gameDisplay = pygame.display.set_mode((512, 512))
 pygame.display.set_caption('CountDownCatch')
 clock = pygame.time.Clock()
 white = (255, 255, 255)
-levelTime = 10
+levelTime = 15
+
+def showCounter(text):
+    pygame.font.init()
+    myfont = pygame.font.SysFont('Comic Sans MS', 32)
+    textsurface = myfont.render(text, False, (255, 0, 0))
+    gameDisplay.blit(textsurface,(240,64))
+
 def run():
     level = Level(128, 196)
     level.generate(4, 2)
@@ -22,13 +29,11 @@ def run():
         seconds =int(round(levelTime - (pygame.time.get_ticks() - timer_start)/1000))
         if seconds == 0:
             break
-        #TODO text surface olarak tanımlayıp kullanıcıya göster
-        print(seconds)
+
         gameDisplay.fill(white)
+        showCounter(str(seconds))
         level.render(gameDisplay)
         pygame.display.flip()
         clock.tick(60)
-
-
 run()
 pygame.quit()

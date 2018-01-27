@@ -12,6 +12,7 @@ class Level:
             for y in range(height):
                 pipe = Pipe(self, x, y)
                 #TODO birbirine bağlanabilen level algoritması yazılacak
+                #ya da hardcode şeklinde levellar tasarlanacak
                 random = randint(1,4)
                 pipe.setPipeType(random)
                 self.pipeList.append(pipe)

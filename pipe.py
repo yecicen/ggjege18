@@ -1,6 +1,5 @@
 import pygame
 
-
 class Pipe:
     def __init__(self, level, x, y):
         self.x = x
@@ -32,6 +31,7 @@ class Pipe:
         rect.y += self.level.y
         return rect
 
+    #TODO aslında 4 farklı class tanImlayıp ordan mı çağırmak lazım
     def setPipeType(self, type):
         if type == 1:
             self.image = pygame.image.load('images/top_bottom.png')
