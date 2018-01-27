@@ -20,7 +20,7 @@ def run():
             elif event.type == pygame.MOUSEBUTTONUP:
                 pos = pygame.mouse.get_pos()
                 level.click(pos)
-
+                
         gameDisplay.fill(white)
         level.render(gameDisplay)
         pygame.display.flip()
